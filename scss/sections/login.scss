@@ -1,0 +1,109 @@
+.login {
+    width: 100%;
+    min-height: 500px;
+    background-image: url(../images/home-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    .formsContainer {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        .left, .right {
+            width: 50%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 20px;
+
+            h1 {
+                margin-top: 30px;
+                font-family: sans-serif;
+                font-size: 36px;
+                color: #fff;
+                text-align: center;
+            }
+        
+            form {
+                width: calc(100% - 20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+        
+                input {
+                    width: 100%;
+                    height: 50px;
+                    font-family: sans-serif;
+                    font-size: 20px;
+                    padding: 15px;
+                    background-color: rgba($color: #fff, $alpha: .5);
+                    color: #444;
+                    margin-bottom: 10px;
+                    border: solid 1px #777;
+                    border-radius: 5px;
+                }
+        
+                input::placeholder {
+                    color: #444;
+                }
+        
+                input[type=submit] {
+                    width: 200px;
+                    font-size: 28px;
+                    padding: 10px;
+                    text-transform: uppercase;
+                    margin-top: 10px;
+                    transition: all 300ms ease-in-out;
+                    cursor: pointer;
+                }
+        
+                input[type=submit]:hover {
+                    background-color: #B36594;
+                    color: #fff;
+                    border-color: #fff;
+                }
+            }
+        }
+
+        .left {
+            border-right: solid 2px rgba($color: #fff, $alpha: .5);
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .login {
+        .formsContainer {
+            width: 75%;
+            justify-content: center;
+            flex-direction: column;
+
+            .left, .right {
+                width: 100%;
+                height: auto;
+            }
+
+            .left {
+                border-right: none;
+            }
+
+            .right {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+    
+
+
+    

@@ -1,0 +1,520 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+html, body {
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 75px;
+  background-color: #333;
+}
+header nav {
+  width: 100%;
+  height: 100%;
+}
+header nav .bars {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  z-index: 2;
+  display: none;
+}
+header nav .bars .bar {
+  display: block;
+  width: 25px;
+  margin: 5px 0;
+  background-color: #fff;
+  height: 3px;
+  border-radius: 5px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+header nav .bars.active .bar:nth-child(2) {
+  opacity: 0;
+}
+header nav .bars.active .bar:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+  background-color: #B36594;
+}
+header nav .bars.active .bar:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
+  background-color: #B36594;
+}
+header nav ul {
+  position: fixed;
+  width: 500px;
+  height: 75px;
+  margin-left: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style-type: none;
+  overflow: hidden;
+  border: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 20px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+header nav ul li a:hover {
+  color: #B36594;
+}
+header nav .active {
+  height: 275px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 960px) {
+  header nav .bars {
+    display: block;
+  }
+  header nav ul {
+    left: 0;
+    top: 75px;
+    height: 0;
+    width: 225px;
+    opacity: 0;
+    z-index: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: solid 2px #B36594;
+    border-radius: 10px;
+    padding: 25px 0;
+  }
+  header nav ul li a {
+    color: #000;
+  }
+}
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+}
+
+.home {
+  width: 100%;
+  min-height: 500px;
+  background-image: url(../images/home-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.home h1 {
+  width: 400px;
+  font-family: sans-serif;
+  font-size: 80px;
+  color: #fff;
+  text-wrap: wrap;
+  border: solid 5px #fff;
+  border-radius: 10px;
+}
+
+.create {
+  width: 100%;
+  min-height: 500px;
+  background-image: url(../images/home-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.create h1 {
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-size: 36px;
+  color: #fff;
+}
+.create form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0;
+}
+.create form input {
+  width: 100%;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #444;
+  margin-bottom: 10px;
+  border: solid 1px #444;
+  border-radius: 5px;
+}
+.create form input::-webkit-input-placeholder {
+  color: #444;
+}
+.create form input::-moz-placeholder {
+  color: #444;
+}
+.create form input:-ms-input-placeholder {
+  color: #444;
+}
+.create form input::-ms-input-placeholder {
+  color: #444;
+}
+.create form input::placeholder {
+  color: #444;
+}
+.create form .inputRow {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.create form .inputRow input {
+  width: calc(50% - 10px);
+}
+.create form .inputRow.three input {
+  width: calc(33.3333333333% - 12.5px);
+}
+.create form input[type=submit] {
+  width: 200px;
+  font-size: 28px;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.create form input[type=submit]:hover {
+  background-color: #B36594;
+  color: #fff;
+  border-color: #fff;
+}
+
+@media only screen and (min-width: 651px) and (max-width: 960px) {
+  .create form {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .create form {
+    width: 90%;
+  }
+  .create form .inputRow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .create form .inputRow input {
+    width: 100%;
+  }
+  .create form .inputRow.three {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .create form .inputRow.three input {
+    width: 100%;
+  }
+}
+.edit {
+  width: 100%;
+  min-height: 500px;
+  background-image: url(../images/home-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.edit h1 {
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-size: 36px;
+  color: #fff;
+}
+.edit form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0;
+}
+.edit form input {
+  width: 100%;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #444;
+  margin-bottom: 10px;
+  border: solid 1px #444;
+  border-radius: 5px;
+}
+.edit form input::-webkit-input-placeholder {
+  color: #444;
+}
+.edit form input::-moz-placeholder {
+  color: #444;
+}
+.edit form input:-ms-input-placeholder {
+  color: #444;
+}
+.edit form input::-ms-input-placeholder {
+  color: #444;
+}
+.edit form input::placeholder {
+  color: #444;
+}
+.edit form .buttonRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 420px;
+}
+.edit form .buttonRow input[type=submit] {
+  width: 200px;
+  font-size: 28px;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.edit form .buttonRow input[type=submit]:hover {
+  background-color: #B36594;
+  color: #fff;
+  border-color: #fff;
+}
+
+@media only screen and (max-width: 960px) {
+  .create form {
+    width: 80%;
+  }
+}
+.login {
+  width: 100%;
+  min-height: 500px;
+  background-image: url(../images/home-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.login .formsContainer {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+}
+.login .formsContainer .left, .login .formsContainer .right {
+  width: 50%;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 20px;
+}
+.login .formsContainer .left h1, .login .formsContainer .right h1 {
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+}
+.login .formsContainer .left form, .login .formsContainer .right form {
+  width: calc(100% - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.login .formsContainer .left form input, .login .formsContainer .right form input {
+  width: 100%;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #444;
+  margin-bottom: 10px;
+  border: solid 1px #777;
+  border-radius: 5px;
+}
+.login .formsContainer .left form input::-webkit-input-placeholder, .login .formsContainer .right form input::-webkit-input-placeholder {
+  color: #444;
+}
+.login .formsContainer .left form input::-moz-placeholder, .login .formsContainer .right form input::-moz-placeholder {
+  color: #444;
+}
+.login .formsContainer .left form input:-ms-input-placeholder, .login .formsContainer .right form input:-ms-input-placeholder {
+  color: #444;
+}
+.login .formsContainer .left form input::-ms-input-placeholder, .login .formsContainer .right form input::-ms-input-placeholder {
+  color: #444;
+}
+.login .formsContainer .left form input::placeholder, .login .formsContainer .right form input::placeholder {
+  color: #444;
+}
+.login .formsContainer .left form input[type=submit], .login .formsContainer .right form input[type=submit] {
+  width: 200px;
+  font-size: 28px;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.login .formsContainer .left form input[type=submit]:hover, .login .formsContainer .right form input[type=submit]:hover {
+  background-color: #B36594;
+  color: #fff;
+  border-color: #fff;
+}
+.login .formsContainer .left {
+  border-right: solid 2px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 960px) {
+  .login .formsContainer {
+    width: 75%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login .formsContainer .left, .login .formsContainer .right {
+    width: 100%;
+    height: auto;
+  }
+  .login .formsContainer .left {
+    border-right: none;
+  }
+  .login .formsContainer .right {
+    margin-bottom: 30px;
+  }
+}
