@@ -20,11 +20,6 @@ function initListener(){
             $('.links').toggleClass("active");
         });
     };
-
-    $("#create-submit").click(function (e) {
-        e.preventDefault();
-        console.log("hi");
-    });
 }
 
 // calling funtions
